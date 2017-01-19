@@ -1,6 +1,24 @@
 // Back-end logic
 
-
+var romanNumbers = function(number) {
+  var output = '';
+  if (number === 1) {
+    output = "I";
+  } else if (number === 5) {
+      output = "V";
+  } else if (number === 10) {
+      output = 'X';
+  } else if (number ===50) {
+      output = 'L';
+  } else if (number === 100) {
+      output = 'C';
+  } else if (number === 500) {
+      output = 'D';
+  } else if (number === 1000) {
+      output = 'M';
+  }
+  return output;
+};
 
 
 
@@ -13,7 +31,7 @@ $(document).ready(function() {
 
     var userInput = parseInt($("input#user-number").val());
 
-    $(".user-roman").text(userInput);
+    $(".user-roman").text(romanNumbers(userInput));
 
   });
 
