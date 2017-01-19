@@ -37,7 +37,9 @@ var convertV = function(number) {
 var convertX = function(number) {
   var output = '';
 
-  if (number < 50 && number > 9) {
+  if (number > 39 && number < 50) {
+    output = output + convertX(10) + convertL(50) + convertV(number % 40);
+  } else if (number < 50 && number > 9) {
     for (var index = number; index > 9; index = number) {
       output = output + "X";
       number = number - 10;
