@@ -20,7 +20,13 @@ var romanNumbers = function(number) {
   return output;
 };
 
-
+var toHigh = function(number) {
+  if (number > 3999 || number < 0) {
+    return true;
+  } else {
+    return false;
+  }
+};
 
 
 // Front-end logic
@@ -30,7 +36,7 @@ $(document).ready(function() {
     event.preventDefault();
 
     var userInput = parseInt($("input#user-number").val());
-
+    alert(toHigh(userInput));
     $(".user-roman").text(romanNumbers(userInput));
 
   });

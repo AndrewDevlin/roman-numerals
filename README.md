@@ -24,6 +24,10 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
 Input: 50
 Output: L
 
+* The number entered cannot be above 3999.
+Input: 4000
+Output: Alert not a valid entry.
+
 * Add value of symbols
 Input: 2
 Output: II
