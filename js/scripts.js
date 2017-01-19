@@ -17,8 +17,10 @@ var convertI = function(number) {
 
 var convertV = function(number) {
   var output = '';
-  
-  if (number > 4 && number < 10) {
+
+  if (number === 9) {
+    output = output + convertI(1) + convertX(10);
+  } else if (number > 4 && number < 10) {
     number = number - 5;
     if (convertI(number) != undefined) {
       output = output + "V" + (convertI(number));
