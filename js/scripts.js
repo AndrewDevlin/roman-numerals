@@ -55,11 +55,15 @@ var convertX = function(number) {
 var convertL = function(number) {
   var output = '';
 
-  if (number > 49 && number < 100) {
+  if (number > 89 && number < 100) {
+    output = output + convertX(10) + convertC(100) + convertX(number % 10);
+    number = 0;
+  } else if (number > 49 && number < 100) {
     for (var index = number; index > 49; index -= 50) {
       output = output + "L";
     }
   }
+
   if (convertX(number % 50) != undefined) {
     output = output + convertX(number % 50);
   }
@@ -69,11 +73,15 @@ var convertL = function(number) {
 var convertC = function(number) {
   var output = '';
 
-  if (number > 99 && number < 500) {
+  if (number > 399 && number < 500) {
+    output = output + convertC(100) + convertD(500) + convertL(number % 100);
+    number = 0;
+  } else if (number > 99 && number < 500) {
     for (var index = number; index > 99; index -= 100) {
       output = output + "C";
     }
   }
+
   if (convertL(number % 100) != undefined) {
     output = output + convertL(number % 100);
   }
@@ -83,7 +91,10 @@ var convertC = function(number) {
 var convertD = function(number) {
   var output = '';
 
-  if (number > 499 && number < 1000) {
+  if (number > 899 && number < 1000) {
+    output = output + convertC(100) + convertM(1000) + convertC(number % 100);
+    number = 0;
+  } else if (number > 499 && number < 1000) {
     for (var index = number; index > 499; index -= 500) {
       output = output + "D";
     }
@@ -108,25 +119,27 @@ var convertM = function(number) {
   return output;
 };
 
-var romanNumbers = function(number) {
-  var output = '';
-  if (number === 1) {
-    output = "I";
-  } else if (number === 5) {
-      output = "V";
-  } else if (number === 10) {
-      output = 'X';
-  } else if (number ===50) {
-      output = 'L';
-  } else if (number === 100) {
-      output = 'C';
-  } else if (number === 500) {
-      output = 'D';
-  } else if (number === 1000) {
-      output = 'M';
-  }
-  return output;
-};
+// Not in use, but possibly later.
+
+// var romanNumbers = function(number) {
+//   var output = '';
+//   if (number === 1) {
+//     output = "I";
+//   } else if (number === 5) {
+//       output = "V";
+//   } else if (number === 10) {
+//       output = 'X';
+//   } else if (number ===50) {
+//       output = 'L';
+//   } else if (number === 100) {
+//       output = 'C';
+//   } else if (number === 500) {
+//       output = 'D';
+//   } else if (number === 1000) {
+//       output = 'M';
+//   }
+//   return output;
+// };
 
 var tooHigh = function(number) {
   if (number > 3999 || number < 0) {
@@ -145,9 +158,13 @@ $(document).ready(function() {
 
     var userInput = parseInt($("input#user-number").val());
 
-    userInput = convertM(userInput);
+    if (tooHigh(userInput)) {
+      alert("Please enter a number under 4,000");
+    } else {
+      $(".user-roman").text(convertM(userInput));
+    }
 
-    $(".user-roman").text(userInput);
+
 
   });
 
