@@ -16,7 +16,29 @@ var convertV = function(number) {
 
   if (number > 4 && number < 10) {
     number = number - 5;
-    output = output + "V" + (convertI(number));
+    if (convertI(number) != undefined) {
+      output = output + "V" + (convertI(number));
+    } else {
+      output = output + "V";
+    }
+  } else if (convertI(number) != undefined) {
+    output = output + convertI(number);
+  }
+
+  return output;
+};
+
+var convertX = function(number) {
+  var output = '';
+
+  if (number < 50 && number > 9) {
+    for (index = number; index > 9; index = number) {
+      output = output + "X";
+      number = number - 10;
+    }
+    output = output + convertV(number);
+  } else {
+    output = output + convertV(number);
   }
 
   return output;
@@ -54,12 +76,12 @@ var tooHigh = function(number) {
 // Front-end logic
 
 $(document).ready(function() {
-  $("form#roman-numeral").click(function(event) {
+  $("#roman-numeral .btn").click(function(event) {
     event.preventDefault();
 
     var userInput = parseInt($("input#user-number").val());
 
-    userInput = convertV(userInput);
+    userInput = convertX(userInput);
 
     $(".user-roman").text(userInput);
 
