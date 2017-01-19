@@ -32,7 +32,7 @@ var convertX = function(number) {
   var output = '';
 
   if (number < 50 && number > 9) {
-    for (index = number; index > 9; index = number) {
+    for (var index = number; index > 9; index = number) {
       output = output + "X";
       number = number - 10;
     }
@@ -43,6 +43,21 @@ var convertX = function(number) {
 
   return output;
 };
+
+var convertL = function(number) {
+  var output = '';
+
+  if (number > 49 && number < 100) {
+    for (var index = number; index > 49; index -= 50) {
+      output = output + "L";
+    }
+  }
+  if (convertX(number % 50) != undefined) {
+    output = output + convertX(number % 50);
+  }
+  return output;
+};
+
 
 var romanNumbers = function(number) {
   var output = '';
@@ -81,7 +96,7 @@ $(document).ready(function() {
 
     var userInput = parseInt($("input#user-number").val());
 
-    userInput = convertX(userInput);
+    userInput = convertL(userInput);
 
     $(".user-roman").text(userInput);
 
