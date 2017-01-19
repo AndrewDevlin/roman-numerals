@@ -58,6 +58,47 @@ var convertL = function(number) {
   return output;
 };
 
+var convertC = function(number) {
+  var output = '';
+
+  if (number > 99 && number < 500) {
+    for (var index = number; index > 99; index -= 100) {
+      output = output + "C";
+    }
+  }
+  if (convertL(number % 100) != undefined) {
+    output = output + convertL(number % 100);
+  }
+  return output;
+};
+
+var convertD = function(number) {
+  var output = '';
+
+  if (number > 499 && number < 1000) {
+    for (var index = number; index > 499; index -= 500) {
+      output = output + "D";
+    }
+  }
+  if (convertC(number % 500) != undefined) {
+    output = output + convertC(number % 500);
+  }
+  return output;
+};
+
+var convertM = function(number) {
+  var output = '';
+
+  if (number > 999 && number < 4000) {
+    for (var index = number; index > 999; index -= 1000) {
+      output = output + "M";
+    }
+  }
+  if (convertD(number % 1000) != undefined) {
+    output = output + convertD(number % 1000);
+  }
+  return output;
+};
 
 var romanNumbers = function(number) {
   var output = '';
@@ -96,7 +137,7 @@ $(document).ready(function() {
 
     var userInput = parseInt($("input#user-number").val());
 
-    userInput = convertL(userInput);
+    userInput = convertM(userInput);
 
     $(".user-roman").text(userInput);
 
