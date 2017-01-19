@@ -28,7 +28,7 @@ Output: L
 Input: 4000
 Output: Alert not a valid entry.
 
-* Add value of symbols
+* Type in number for multi-digit Roman numbers
 Input: 2
 Output: II
 

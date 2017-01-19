@@ -1,5 +1,27 @@
 // Back-end logic
 
+var convertI = function(number) {
+  var output = '';
+
+  if (number < 5 && number > 0) {
+    for (var index = 1; index <= number; index += 1) {
+      output = output + "I";
+    }
+    return output;
+  }
+};
+
+var convertV = function(number) {
+  var output = '';
+
+  if (number > 4 && number < 10) {
+    number = number - 5;
+    output = output + "V" + (convertI(number));
+  }
+
+  return output;
+};
+
 var romanNumbers = function(number) {
   var output = '';
   if (number === 1) {
@@ -20,7 +42,7 @@ var romanNumbers = function(number) {
   return output;
 };
 
-var toHigh = function(number) {
+var tooHigh = function(number) {
   if (number > 3999 || number < 0) {
     return true;
   } else {
@@ -36,8 +58,10 @@ $(document).ready(function() {
     event.preventDefault();
 
     var userInput = parseInt($("input#user-number").val());
-    alert(toHigh(userInput));
-    $(".user-roman").text(romanNumbers(userInput));
+
+    userInput = convertV(userInput);
+
+    $(".user-roman").text(userInput);
 
   });
 
