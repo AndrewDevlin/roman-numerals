@@ -1,65 +1,60 @@
-# _{Application Name}_
+# _Roman Numerals_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _This will take in numbers input from the user and output the Roman numeral equivalent, 2017_
 
-#### By _**{List of contributors}**_
+#### By _**Andrew Devlin & Philip Putnam**_
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_Simple program that converts user's numbers into Roman numerals, taking into account the count, add/subtract, and max amount rules_
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
+*_Clone index.html and open it up in your browser._
 
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
 
-##BDD:
+##Specifications:
 
-* Type in number for a single-digit Roman numeral
+* _Type in number for a single-digit Roman numeral
 Input: 50
-Output: L
+Output: L_
 
-* The number entered cannot be above 3999.
+* _The number entered cannot be above 3999.
 Input: 4000
-Output: Alert not a valid entry.
+Output: Alert not a valid entry._
 
-* Type in number for multi-digit Roman numbers
+* _Type in number for multi-digit Roman numbers
 Input: 2
-Output: II
+Output: II_
 
-* Program identifies if a Roman numeral is used more than three times and switches to subtraction
+* _Program identifies if a Roman numeral is used more than three times and switches to subtraction
 Input: 90
-Output: XC
+Output: XC_
 
-* Program separates ones, tens, hundreds, and thousands.
+* _Program separates ones, tens, hundreds, and thousands.
 Input: 99
-Output: XCIX
+Output: XCIX_
 
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+_No known bugs_
 
 ## Support and contact details
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
+_Contact Andrew and/or Phil support_
 
 ## Technologies Used
 
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+_HTML5_
+_CSS_
+_JavaScript_
+_jQuery_
+_Bootstrap_
+_Git_
+_GitHub_
 
 ### License
 
-*{Determine the license under which this application can be used.  See below for more details on licensing.}*
+*Product under the MIT license*
 
-Copyright (c) 2016 **_{List of contributors or company name}_**
-
-- add the value of all the symbols
-
-- cannot have three or more of the same characters in the same row, if you do you subtract
-
-- separate ones, tens, hundreds, and thousands
+Copyright (c) 2017 **_Andrew Devlin & Philip Putnam_**
