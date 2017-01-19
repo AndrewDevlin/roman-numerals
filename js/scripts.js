@@ -6,6 +6,10 @@ var convertI = function(number) {
   if (number < 5 && number > 0) {
     for (var index = 1; index <= number; index += 1) {
       output = output + "I";
+      if (number === 4) {
+        index = number + 1;
+        output = output + convertV(5);
+      }
     }
     return output;
   }
@@ -13,7 +17,7 @@ var convertI = function(number) {
 
 var convertV = function(number) {
   var output = '';
-
+  
   if (number > 4 && number < 10) {
     number = number - 5;
     if (convertI(number) != undefined) {

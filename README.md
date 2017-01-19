@@ -32,7 +32,7 @@ Output: Alert not a valid entry.
 Input: 2
 Output: II
 
-* Program identifies if a Roman numeral is used more than twice and switches to subtraction
+* Program identifies if a Roman numeral is used more than three times and switches to subtraction
 Input: 90
 Output: XC
 
